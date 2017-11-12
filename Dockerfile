@@ -13,9 +13,9 @@ RUN export uid=1000 gid=1000 && \
     chmod 0440 /etc/sudoers.d/user && \
     chown ${uid}:${gid} -R /home/user
 
+RUN mkdir -p /media/user/home && mkdir -p /media/user/current
+
 USER user
 ENV HOME /home/user
-
-RUN mkdir /media/user && mkdir /media/user/home && mkdir /media/user/current
 
 CMD /usr/bin/notes-up
